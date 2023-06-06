@@ -1,0 +1,22 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">User Details</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+      (click)="activeModal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <p><strong>Name:</strong>  {{this.data.name}}</p>
+    <p><strong>Email:</strong> {{this.data.email}}</p>
+    <p><strong>Phone:</strong> {{this.data.number}}</p>
+    <p><strong>Gender:</strong> {{this.data.gender}}</p>
+    <p><strong>Category:</strong> {{this.data.category}}</p>
+    <p><strong>Technologies: </strong> <span *ngFor="let tech of this.data.tech">{{" "+ tech + " "}}</span></p>
+    <p><strong>Profile Picture:</strong> <img src="{{this.data.url}}" alt=""></p>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+      (click)="activeModal.dismiss('Cross click')">Close</button>
+    <button type="button" class="btn btn-primary" (click)="saveData()">Save changes</button>
+  </div>
+</div>

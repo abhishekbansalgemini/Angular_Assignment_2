@@ -1,0 +1,25 @@
+<!-- Card to show these details  -->
+
+
+<div class="main-div" *ngIf = !check_empty()>
+  <div class="card-container" *ngFor="let data of userdata">
+    <img class="round" src="{{data.url}}" alt="user">
+    <h3>{{data.name}}</h3>
+    <h6>{{data.email}}</h6>
+    <h6>{{data.gender}}</h6>
+    <h6>{{data.number}}</h6>
+    <h6>{{data.category}}</h6>
+
+    <div class="skills">
+      <h6>Technologies</h6>
+      <ul>
+        <li *ngFor="let tech of data.tech">{{tech}}</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf = check_empty() class="No-Records">
+  <h2>NO RECORDS FOUND!</h2>
+</div>

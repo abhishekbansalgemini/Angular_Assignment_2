@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-md-12">
+
+        <form [formGroup]="loginForm">
+            <h1> Sign Up </h1>
+
+            <strong><label for="name">Name:</label></strong>
+            <input type="text" name="name" formControlName="name">
+            <small class="text-danger" *ngIf="name && name.invalid && name.touched">Name is required</small>
+
+            <strong><label for="gender">Gender:</label></strong>
+            <input type="radio" id="male" value="male" name="gender" formControlName="gender"><label for="male"
+                class="light">Male</label><br>
+
+            <input type="radio" id="female" value="female" name="gender" formControlName="gender"><label for="female"
+                class="light">Female</label>
+            <small class="text-danger" *ngIf="genderr && genderr.invalid && genderr.touched">Gender is required</small>
+            <br> <br>
+
+            <strong><label for="email">Email:</label></strong>
+            <input type="email" id="mail" name="email" formControlName="email">
+            <small class="text-danger" *ngIf="email && email.invalid && email.touched">Email is required</small>
+
+            <strong><label for="number">Number:</label></strong>
+            <input type="number" id="number" name="number" formControlName="number">
+            <small class="text-danger" *ngIf="number && number.invalid && number.touched">Number is required</small>
+
+            <strong><label for="category">Category:</label></strong>
+            <select id="category" name="category" #category formControlName="category">
+                <option value="General">General</option>
+                <option value="OBC">OBC</option>
+                <option value="SC/ST">SC/ST</option>
+            </select>
+            <small class="text-danger" *ngIf="categoryr && categoryr.invalid && categoryr.touched">Category is
+                required</small>
+
+
+            <strong><label>Technologies:</label></strong>
+            <input type="checkbox" id="c" value="C" name="c" (change)="gettech1($event)"><label class="light"
+                for="c">C</label><br>
+            <input type="checkbox" id="c++" value="C++" name="c++" (change)="gettech2($event)"><label class="light"
+                for="c++">C++</label><br>
+            <input type="checkbox" id="java" value="Java" name="java" (change)="gettech3($event)"><label class="light"
+                for="java">JAVA</label> <br>
+            <input type="checkbox" name="python" id="python" (change)="gettech4($event)" value="Python"> <label
+                for="python" class="light">PYTHON</label> <br>
+            <input type="checkbox" name="javascript" id="javascript" (change)="gettech5($event)" value="Javascript">
+            <label for="javascript" class="light">JAVASCRIPT</label> <br> <br>
+            <!-- <small class="text-danger" *ngIf="tech_error">Technology is required</small><br> <br> -->
+
+
+
+            <strong><label for="profile">Profile Picture:</label></strong>
+            <input type="file" name="profile" id="profile" (change)="onFileChanged($event)"> 
+            <p><small class="text-danger">{{message}}</small></p><br> <br>
+
+
+            <button [disabled]="loginForm.invalid"  class="check" (click)="open()">
+                Preview
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
