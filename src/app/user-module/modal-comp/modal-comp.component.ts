@@ -22,16 +22,7 @@ export class ModalCompComponent {
 
   @Input() data: any;
 
-  // This function is checking that either image is get input by the user or not... because image is optional
-  // If image is not uploaded than we will not going to show that image signal
-  // check() {
-  //   if (this.data.url !== "") {
-  //     return true;
-  //   }
-  //   else {
-  //     return false;
-  //   }
-  // }
+ 
 
 
 }
